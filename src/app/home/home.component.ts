@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Http } from '@angular/http';
+
+
+
+
+
 
 @Component({
   selector: 'app-home',
@@ -8,10 +14,23 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+  
 
   }
 
-}
+
+
+
+
+
+
+
+  
+    
+  }
+
+
