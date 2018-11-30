@@ -67,23 +67,41 @@ export class TestScoreComponent implements OnInit {
 
   }
 
-saveTest(){
-  localStorage.setItem('tests', JSON.stringify(this.tests));
-  this.toastService.showToast('success', 5000, 'Success. Items saved');
+  saveTest() {
+    localStorage.setItem('tests', JSON.stringify(this.tests));
+    this.toastService.showToast('success', 5000, 'Success. Items saved');
+
+  }
+
+
+  finalize (){
+    this.calculate();
+    const data = this.calculate();
+    this.router.navigate(['home', data]);
+  }
+
+
+  calculate() {
+    let pointsReceived = 0;
+    for (let i = 0; i < this.tests.length; i++) {
+      pointsReceived += this.tests[i].pointsReceived;
+      console.log('received---->', pointsReceived);
+
+    }
+    return {
+      numberOfTests: this.tests.length,
+      pointsPossible: pointsReceived
+
+
+    };
+  }
+
+
+
 
 
 
 }
-
-
-
-
-
-
-
-  
-
-  }
 
 
 
